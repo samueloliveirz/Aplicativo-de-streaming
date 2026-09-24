@@ -37,9 +37,9 @@ public static void main(String[] args) throws Exception {
         Album album2 = new Album("Lançamentos", 2025);
 
         // Criando conteúdos
-        Musica musica = new Musica(1, "Noid", 3, artista, album1);
-        Podcast podcast = new Podcast(2, "o poder so habito", 58, apresentador, 5);
-        Audiobook audiobook = new Audiobook(3, "harry potter", 260, narrador, 8);
+        Musica musica = new Musica(1, "Noid", 204, artista, album1);
+        Podcast podcast = new Podcast(2, "o poder so habito", 3480, apresentador, 5);
+        Audiobook audiobook = new Audiobook(3, "harry potter", 15600, narrador, 8);
 
         // Adicionando músicas ao álbum2
         System.out.println("\n--- Adicionando Músicas ---");
@@ -84,7 +84,7 @@ public static void main(String[] args) throws Exception {
         Avaliacao avaliacao = new Avaliacao("Fantastica!", 5);
         avaliacao.avaliar();
 
-        Comentario comentario = new Comentario("uma bosta, o host do pod e muito ruim!", usuarioPremium);
+        Comentario comentario = new Comentario("Ótimo episódio, recomendo!", usuarioPremium);
         System.out.println("Comentário de " + comentario.getUsuario().getNome() + ": " + comentario.getTexto());
 
         // Gêneros e recomendações

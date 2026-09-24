@@ -31,4 +31,15 @@ public abstract class Conteudo {
     public void setDuracao(int duracao) {
         this.duracao = duracao;
     }
+
+    public String getDuracaoFormatada() {
+        int horas = duracao / 3600;
+        int minutos = (duracao % 3600) / 60;
+        int segundos = duracao % 60;
+
+        if (horas > 0) {
+            return String.format("%d:%02d:%02d", horas, minutos, segundos);
+        }
+        return String.format("%d:%02d", minutos, segundos);
+    }
 }
