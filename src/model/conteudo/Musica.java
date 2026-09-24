@@ -13,6 +13,11 @@ public class Musica extends Conteudo {
     }
 
 
+    @Override
+    public void reproduzir() {
+        tocar();
+    }
+
     public void tocar() {
         System.out.println("Tocando música: " + getTitulo() + " - " + artista.getNome() + " (Álbum: " + album.getTitulo() + ")");
     }

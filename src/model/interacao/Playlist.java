@@ -1,17 +1,42 @@
 package model.interacao;
 
+import model.conteudo.Conteudo;
 import model.usuario.Usuario;
 
-public class Playlist {
-    private Usuario dono;
-    private int quantidadeMusicas;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Playlist(Usuario dono, int quantidadeMusicas) {
+public class Playlist {
+    private String nome;
+    private Usuario dono;
+    private List<Conteudo> conteudos = new ArrayList<>();
+
+    public Playlist(String nome, Usuario dono) {
+        this.nome = nome;
         this.dono = dono;
-        this.quantidadeMusicas = quantidadeMusicas;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Usuario getDono() {
+        return dono;
+    }
+
+    public List<Conteudo> getConteudos() {
+        return List.copyOf(conteudos);
+    }
+
+    public void addConteudo(Conteudo conteudo) {
+        conteudos.add(conteudo);
     }
 
     public void reproduzir() {
-        System.out.println("Reproduzindo playlist de " + dono.getNome() + " com " + quantidadeMusicas + " músicas.");
+        System.out.println("Playlist '" + nome + "' de " + dono.getNome()
+                + " (" + conteudos.size() + " itens)");
+        for (Conteudo c : conteudos) {
+            c.reproduzir();
+        }
     }
 }

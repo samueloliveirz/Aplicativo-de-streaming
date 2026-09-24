@@ -13,6 +13,11 @@ public class Podcast extends Conteudo {
     }
 
 
+    @Override
+    public void reproduzir() {
+        ouvir();
+    }
+
     public void ouvir() {
         System.out.println("Ouvindo podcast: " + getTitulo() + " (Episódio #" + episodios + ") com " + apresentador.getNome());
     }

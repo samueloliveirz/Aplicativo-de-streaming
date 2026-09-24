@@ -1,12 +1,14 @@
 package model.conteudo;
 
+import model.usuario.Artista;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Album {
     private String titulo;
     private int ano;
-    private List<String> musicas = new ArrayList<>();
+    private List<Musica> musicas = new ArrayList<>();
 
     public Album(String titulo, int ano) {
         this.titulo = titulo;
@@ -17,13 +19,24 @@ public class Album {
         return this.titulo;
     }
 
-    public void addMusica(String nomeMusica) {
-        this.musicas.add(nomeMusica);
-        System.out.println("Música '" + nomeMusica + "' adicionada ao álbum '" + titulo + "'.");
+    public Musica addMusica(int id, String titulo, int duracao, Artista artista) {
+        Musica musica = new Musica(id, titulo, duracao, artista, this);
+        musicas.add(musica);
+        return musica;
     }
 
     public void exibirInfo() {
         System.out.println("Álbum: " + titulo + " (" + ano + ")");
-        System.out.println("Faixas: " + musicas);
+        for (Musica m : musicas) {
+            System.out.println("  - " + m.getTitulo() + " [" + m.getDuracaoFormatada() + "]");
+        }
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public List<Musica> getMusicas() {
+        return List.copyOf(musicas);
     }
 }
