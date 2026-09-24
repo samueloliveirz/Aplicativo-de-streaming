@@ -6,7 +6,7 @@ public class Audiobook extends Conteudo {
     private Narrador autor;
     private int capitulos;
 
-    public Audiobook(int id, String titulo, double duracao, Narrador autor, int capitulos) {
+    public Audiobook(int id, String titulo, int duracao, Narrador autor, int capitulos) {
         super(id, titulo, duracao);
         this.autor = autor;
         this.capitulos = capitulos;
@@ -14,7 +14,7 @@ public class Audiobook extends Conteudo {
 
 
     public void ouvir() {
-        System.out.println("Ouvindo audiobook: " + titulo + ", narrado por " + autor.getNome() + " (" + capitulos + " capítulos).");
+        System.out.println("Ouvindo audiobook: " + getTitulo() + ", narrado por " + autor.getNome() + " (" + capitulos + " capítulos).");
     }
 
     public int getCapitulos() {

@@ -9,12 +9,12 @@ public class UsuarioPremium extends Usuario {
     }
 
     public void baixar(String musica) {
-        System.out.println("Usuário " + nome + " está baixando a faixa: " + musica);
+        System.out.println("Usuário " + getNome() + " está baixando a faixa: " + musica);
     }
 
     @Override
     public void exibirInfo() {
         System.out.println("--- Usuário Premium ---");
-        System.out.println("ID: " + id + ", Nome: " + nome + ", Email: " + email + ", Mensalidade: R$" + valorMensal);
+        System.out.println("ID: " + getId() + ", Nome: " + getNome() + ", Email: " + getEmail() + ", Mensalidade: R$" + valorMensal);
     }
 }

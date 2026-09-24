@@ -9,12 +9,12 @@ public class UsuarioGratuito extends Usuario {
     }
 
     public void ouvirAnuncio() {
-        System.out.println("Usuário " + nome + " está ouvindo um anúncio.");
+        System.out.println("Usuário " + getNome() + " está ouvindo um anúncio.");
     }
 
     @Override
     public void exibirInfo() {
         System.out.println("--- Usuário Gratuito ---");
-        System.out.println("ID: " + id + ", Nome: " + nome + ", Email: " + email + ", Com anúncios: " + anuncio);
+        System.out.println("ID: " + getId() + ", Nome: " + getNome() + ", Email: " + getEmail() + ", Com anúncios: " + anuncio);
     }
 }

@@ -37,9 +37,9 @@ public static void main(String[] args) throws Exception {
         Album album2 = new Album("Lançamentos", 2025);
 
         // Criando conteúdos
-        Musica musica = new Musica(1, "Noid", 3.4, artista, album1);
-        Podcast podcast = new Podcast(2, "o poder so habito", 58.0, apresentador, 5);
-        Audiobook audiobook = new Audiobook(3, "harry potter", 260.0, narrador, 8);
+        Musica musica = new Musica(1, "Noid", 3, artista, album1);
+        Podcast podcast = new Podcast(2, "o poder so habito", 58, apresentador, 5);
+        Audiobook audiobook = new Audiobook(3, "harry potter", 260, narrador, 8);
 
         // Adicionando músicas ao álbum2
         System.out.println("\n--- Adicionando Músicas ---");

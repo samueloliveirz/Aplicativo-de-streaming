@@ -11,12 +11,12 @@ public class Artista extends Usuario {
 
 
     public void publicarConteudo() {
-        System.out.println("Artista " + nome + " está publicando um novo conteúdo.");
+        System.out.println("Artista " + getNome() + " está publicando um novo conteúdo.");
     }
 
     @Override
     public void exibirInfo() {
         System.out.println("--- Artista ---");
-        System.out.println("ID: " + id + ", Nome: " + nome + ", Gênero: " + generoMusical);
+        System.out.println("ID: " + getId() + ", Nome: " + getNome() + ", Gênero: " + generoMusical);
     }
 }

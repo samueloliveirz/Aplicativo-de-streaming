@@ -9,12 +9,12 @@ public class Apresentador extends Usuario {
     }
 
     public void apresentar() {
-        System.out.println("Apresentador(a) " + nome + " está apresentando o programa '" + programa + "'.");
+        System.out.println("Apresentador(a) " + getNome() + " está apresentando o programa '" + programa + "'.");
     }
 
     @Override
     public void exibirInfo() {
         System.out.println("--- Apresentador ---");
-        System.out.println("ID: " + id + ", Nome: " + nome + ", Programa: " + programa);
+        System.out.println("ID: " + getId() + ", Nome: " + getNome() + ", Programa: " + programa);
     }
 }

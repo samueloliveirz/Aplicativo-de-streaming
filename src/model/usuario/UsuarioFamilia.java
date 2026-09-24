@@ -9,12 +9,12 @@ public class UsuarioFamilia extends Usuario {
     }
 
     public void adicionarMembro() {
-        System.out.println("Um novo membro foi adicionado ao plano da " + nome + ".");
+        System.out.println("Um novo membro foi adicionado ao plano da " + getNome() + ".");
     }
 
     @Override
     public void exibirInfo() {
         System.out.println("--- Usuário Família ---");
-        System.out.println("ID: " + id + ", Nome: " + nome + ", Email: " + email + ", Membros: " + numeroMembros);
+        System.out.println("ID: " + getId() + ", Nome: " + getNome() + ", Email: " + getEmail() + ", Membros: " + numeroMembros);
     }
 }

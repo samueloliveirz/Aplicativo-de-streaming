@@ -6,7 +6,7 @@ public class Musica extends Conteudo {
     private Artista artista;
     private Album album;
 
-    public Musica(int id, String titulo, double duracao, Artista artista, Album album) {
+    public Musica(int id, String titulo, int duracao, Artista artista, Album album) {
         super(id, titulo, duracao);
         this.artista = artista;
         this.album = album;
@@ -14,7 +14,7 @@ public class Musica extends Conteudo {
 
 
     public void tocar() {
-        System.out.println("Tocando música: " + titulo + " - " + artista.getNome() + " (Álbum: " + album.getTitulo() + ")");
+        System.out.println("Tocando música: " + getTitulo() + " - " + artista.getNome() + " (Álbum: " + album.getTitulo() + ")");
     }
 
     public Album getAlbum() {
