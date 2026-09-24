@@ -15,10 +15,10 @@ public class Audiobook extends Conteudo {
 
     @Override
     public void reproduzir() {
-        ouvir();
+        narrar();
     }
 
-    public void ouvir() {
+    public void narrar() {
         System.out.println("Ouvindo audiobook: " + getTitulo() + ", narrado por " + autor.getNome() + " (" + capitulos + " capítulos).");
     }
 

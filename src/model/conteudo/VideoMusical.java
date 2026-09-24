@@ -18,10 +18,15 @@ public class VideoMusical extends Conteudo {
     }
 
     public void assistir() {
-        System.out.println("Assistindo vídeo: " + getTitulo() + " - " + artista.getNome() + " (" + resolucao + ")");
+        System.out.println("Assistindo vídeo: " + getTitulo() + " - " + artista.getNome()
+                + " (" + resolucao + ") [" + getDuracaoFormatada() + "]");
+    }
+
+    public Artista getArtista() {
+        return artista;
     }
 
     public String getResolucao() {
-        return this.resolucao;
+        return resolucao;
     }
 }

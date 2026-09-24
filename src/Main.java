@@ -10,7 +10,12 @@ import pagamento.Pagamento;
 import pagamento.metodo.Boleto;
 import pagamento.metodo.Cartao;
 import pagamento.metodo.Pix;
+import servico.Notificacao;
 import servico.Recomendacao;
+import servico.RelatorioUso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -68,9 +73,11 @@ public class Main {
                 playlist.addConteudo(videoMusical);
                 playlist.reproduzir();
 
-                Historico historico = new Historico("Músicas ouvidas recentemente");
+                Historico historico = new Historico(usuarioPremium);
+                historico.registrar(musica);
+                historico.registrar(podcast);
+                historico.registrar(videoMusical);
                 historico.exibir();
-
                 // Exibindo informações dos álbuns
                 System.out.println("\n--- Informações dos Álbuns ---");
                 album1.exibirInfo();
@@ -95,8 +102,21 @@ public class Main {
                 // Gêneros e recomendações
                 Genero genero = new Genero("Forró");
                 System.out.println("Gênero criado: " + genero.getNome());
-                Recomendacao recomendacao = new Recomendacao("Baseado nos seus gostos musicais");
-                recomendacao.sugerir();
+
+                // Serviços: recomendação, notificação e relatório
+                System.out.println("\n--- Recomendações, Notificações e Relatório ---");
+                List<Conteudo> catalogo = new ArrayList<>(List.of(musica, podcast, audiobook, videoMusical));
+                catalogo.addAll(album2.getMusicas());
+
+                Recomendacao recomendacao = new Recomendacao("conteúdos que você ainda não ouviu");
+                recomendacao.sugerir(historico, catalogo);
+
+                Notificacao notificacao = new Notificacao();
+                notificacao.enviar(usuarioPremium, "Seu pagamento foi aprovado!");
+                notificacao.enviar(usuarioPremium, "Novo lançamento: " + videoMusical.getTitulo());
+
+                RelatorioUso relatorio = new RelatorioUso();
+                relatorio.gerar(historico);
 
                 // Demonstração de funcionalidades específicas
                 System.out.println("\n--- Funcionalidades Específicas ---");
