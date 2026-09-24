@@ -19,7 +19,7 @@ public class Podcast extends Conteudo {
     }
 
     public void ouvir() {
-        System.out.println("Ouvindo podcast: " + getTitulo() + " (Episódio #" + episodios + ") com " + apresentador.getNome());
+        System.out.println("Ouvindo podcast: " + getTitulo() + " (Episódio #" + episodios + ") com " + apresentador.getNome() + " [" + getDuracaoFormatada() + "]");
     }
 
     public int getEpisodios() {

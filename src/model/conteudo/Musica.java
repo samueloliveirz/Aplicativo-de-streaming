@@ -19,7 +19,7 @@ public class Musica extends Conteudo {
     }
 
     public void tocar() {
-        System.out.println("Tocando música: " + getTitulo() + " - " + artista.getNome() + " (Álbum: " + album.getTitulo() + ")");
+        System.out.println("Tocando música: " + getTitulo() + " - " + artista.getNome() + " (Álbum: " + album.getTitulo() + ") [" + getDuracaoFormatada() + "]");
     }
 
     public Album getAlbum() {

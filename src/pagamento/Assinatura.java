@@ -13,6 +13,6 @@ public class Assinatura {
     }
 
     public void exibir() {
-        System.out.println("Assinatura Tipo: " + tipo + ", Preço: R$" + preco);
+        System.out.println("Assinatura Tipo: " + tipo + ", Preço: R$ " + String.format("%.2f", preco));
     }
 }

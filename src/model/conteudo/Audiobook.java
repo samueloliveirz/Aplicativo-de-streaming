@@ -19,7 +19,7 @@ public class Audiobook extends Conteudo {
     }
 
     public void narrar() {
-        System.out.println("Ouvindo audiobook: " + getTitulo() + ", narrado por " + autor.getNome() + " (" + capitulos + " capítulos).");
+        System.out.println("Ouvindo audiobook: " + getTitulo() + ", narrado por " + autor.getNome() + " (" + capitulos + " capítulos) [" + getDuracaoFormatada() + "]");
     }
 
     public int getCapitulos() {

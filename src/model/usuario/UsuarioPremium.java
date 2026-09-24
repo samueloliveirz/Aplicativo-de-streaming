@@ -15,6 +15,6 @@ public class UsuarioPremium extends Usuario {
     @Override
     public void exibirInfo() {
         System.out.println("--- Usuário Premium ---");
-        System.out.println("ID: " + getId() + ", Nome: " + getNome() + ", Email: " + getEmail() + ", Mensalidade: R$" + valorMensal);
+        System.out.println("ID: " + getId() + ", Nome: " + getNome() + ", Email: " + getEmail() + ", Mensalidade: R$ " + String.format("%.2f", valorMensal));
     }
 }
