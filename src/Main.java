@@ -5,7 +5,11 @@ import model.interacao.Historico;
 import model.interacao.Playlist;
 import model.usuario.*;
 import pagamento.Assinatura;
+import pagamento.HistoricoTransacoes;
 import pagamento.Pagamento;
+import pagamento.metodo.Boleto;
+import pagamento.metodo.Cartao;
+import pagamento.metodo.Pix;
 import servico.Recomendacao;
 
 public class Main {
@@ -74,13 +78,11 @@ public class Main {
 
                 // Processando pagamentos e assinaturas
                 System.out.println("\n--- Pagamentos e Assinaturas ---");
-                Pagamento pagamento = new Pagamento("Cartão de Crédito", 11.90);
-                pagamento.processar();
-
-                Assinatura assinatura = new Assinatura();
-                assinatura.setTipo("Premium");
-                assinatura.setPreco(11.90);
-                assinatura.exibir();
+                HistoricoTransacoes historicoTransacoes = new HistoricoTransacoes();
+                historicoTransacoes.registrar(new Pagamento(new Cartao("perola", "1234"), 11.90));
+                historicoTransacoes.registrar(new Pagamento(new Pix("perola@email.com"), 11.90));
+                historicoTransacoes.registrar(new Pagamento(new Boleto("34191.79001 01043.510047"), 29.90));
+                historicoTransacoes.exibir();
 
                 // Avaliações e comentários
                 System.out.println("\n--- Avaliações e Comentários ---");

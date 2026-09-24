@@ -1,15 +1,30 @@
 package pagamento;
 
-public class Pagamento {
-    private String metodo;
-    private double valor;
+import pagamento.metodo.MetodoPagamento;
 
-    public Pagamento(String metodo, double valor) {
+public class Pagamento {
+    private MetodoPagamento metodo;
+    private double valor;
+    private boolean aprovado;
+
+    public Pagamento(MetodoPagamento metodo, double valor) {
         this.metodo = metodo;
         this.valor = valor;
     }
 
     public void processar() {
-        System.out.println("Processando pagamento de R$" + valor + " via " + metodo + ".");
+        aprovado = metodo.processar(valor);
+    }
+
+    public MetodoPagamento getMetodo() {
+        return metodo;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public boolean isAprovado() {
+        return aprovado;
     }
 }
