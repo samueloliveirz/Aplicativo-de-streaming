@@ -1,3 +1,13 @@
+import model.conteudo.*;
+import model.interacao.Avaliacao;
+import model.interacao.Comentario;
+import model.interacao.Historico;
+import model.interacao.Playlist;
+import model.usuario.*;
+import pagamento.Assinatura;
+import pagamento.Pagamento;
+import servico.Recomendacao;
+
 public class Main {
 
 public static void main(String[] args) throws Exception {
